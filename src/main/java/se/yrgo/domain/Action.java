@@ -1,5 +1,6 @@
 package se.yrgo.domain;
 
+import java.time.LocalDateTime;
 import java.util.Calendar;
 
 import javax.persistence.Entity;
@@ -43,8 +44,11 @@ public class Action {
 		this.actionId = new Integer(actionId);
 	}
 
+    public Action(String s, LocalDateTime localDateTime) {
+    }
 
-	public boolean isOverdue()	{
+
+    public boolean isOverdue()	{
 		Calendar dateNow = new java.util.GregorianCalendar();
 
 		return dateNow.after(this.requiredBy);
