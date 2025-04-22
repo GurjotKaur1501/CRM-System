@@ -14,4 +14,6 @@ public interface CallHandlingService {
 	 * any actions in the diary service
 	 */
 	public void recordCall(String customerId, Call newCall, Collection<Action> actions) throws CustomerNotFoundException;
+
+    void recordCall(String customerId, Call callDetails, Action action);
 }
