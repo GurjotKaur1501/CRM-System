@@ -26,8 +26,8 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 
 	@Override
 	public void deleteCustomer(Customer Customer) {
-		customer.remove(customer.compute());
-		calls.remove(customer.compute());
+		customer.remove(customer.getClass());
+		calls.remove(customer.getClass());
 	}
 
 	@Override
