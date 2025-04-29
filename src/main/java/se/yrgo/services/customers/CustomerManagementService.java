@@ -2,6 +2,7 @@ package se.yrgo.services.customers;
 
 import java.util.List;
 
+import se.yrgo.dataaccess.RecordNotFoundException;
 import se.yrgo.domain.Call;
 import se.yrgo.domain.Customer;
 
@@ -11,10 +12,10 @@ public interface CustomerManagementService {
 	public void newCustomer(Customer newCustomer);
 
 
-	public void updateCustomer(Customer changedCustomer);
+	public void updateCustomer(Customer changedCustomer) throws RecordNotFoundException;
 
 
-	public void deleteCustomer(Customer oldCustomer);
+	public void deleteCustomer(Customer oldCustomer) throws RecordNotFoundException;
 
 
 	public Customer findCustomerById(String customerId) throws CustomerNotFoundException;
