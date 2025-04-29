@@ -14,20 +14,19 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 
 
 	@Override
-	public void newCustomer(Customer customer) {
-		customer.put(customer.getCompanyName(), customer);
-		calls.put(customer.getCompanyName(), new ArrayList<>());
+	public void newCustomer(Customer newcustomer) {
+		customer.put(newcustomer.getCustomerId(), newcustomer);
 	}
 
 	@Override
-	public void updateCustomer(Customer customer) {
-		customer.put(customer.getCompanyName(), customer);
+	public void updateCustomer(Customer changedCustomer) {
+		customer.put(changedCustomer.getCustomerId(), changedCustomer);
 	}
 
 	@Override
-	public void deleteCustomer(Customer Customer) {
-		customer.remove(customer.getClass());
-		calls.remove(customer.getClass());
+	public void deleteCustomer(Customer oldCustomer) {
+		customer.remove(oldCustomer.getCustomerId());
+		calls.remove(oldCustomer.getCustomerId());
 	}
 
 	@Override
