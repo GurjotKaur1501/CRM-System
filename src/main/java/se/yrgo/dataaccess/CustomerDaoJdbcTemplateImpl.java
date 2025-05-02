@@ -17,6 +17,12 @@ public class CustomerDaoJdbcTemplateImpl implements CustomerDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
+
+    public void createTables() {
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS customer (id INT PRIMARY KEY, companyName VARCHAR(100), email VARCHAR(100))");
+        jdbcTemplate.execute("CREATE TABLE IF NOT EXISTS call_record (id INT PRIMARY KEY, customer_id INT, notes VARCHAR(255))");
+    }
+
     @Override
     public void create(Customer customer) {
         String sql = "INSERT INTO customer (id, companyName, email) VALUES (?, ?, ?)";
