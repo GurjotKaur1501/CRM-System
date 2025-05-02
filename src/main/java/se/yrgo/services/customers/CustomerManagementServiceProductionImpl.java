@@ -17,7 +17,7 @@ public class CustomerManagementServiceProductionImpl implements CustomerManageme
     }
 
     @Override
-    public Customer getCustomerById(int id) throws CustomerNotFoundException {
+    public Customer getCustomerById(int id) throws CustomerNotFoundException, RecordNotFoundException {
         return customerDao.getCustomerById(id);
     }
 
@@ -37,7 +37,7 @@ public class CustomerManagementServiceProductionImpl implements CustomerManageme
     }
 
     @Override
-    public Customer findCustomerById(String customerId) throws CustomerNotFoundException {
+    public Customer findCustomerById(String customerId) throws CustomerNotFoundException, RecordNotFoundException {
         return customerDao.findCustomerById(customerId);
     }
 
@@ -52,7 +52,7 @@ public class CustomerManagementServiceProductionImpl implements CustomerManageme
     }
 
     @Override
-    public Customer getFullCustomerDetail(String customerId) throws CustomerNotFoundException {
+    public Customer getFullCustomerDetail(String customerId) throws CustomerNotFoundException, RecordNotFoundException {
         Customer customer = customerDao.findCustomerById(customerId);
         List<Call> calls = customerDao.getCallsForCustomer(customerId);
         customer.setCalls(calls);

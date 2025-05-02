@@ -18,17 +18,17 @@ public interface CustomerManagementService {
 	public void deleteCustomer(Customer oldCustomer) throws RecordNotFoundException;
 
 
-	public Customer findCustomerById(String customerId) throws CustomerNotFoundException;
+	public Customer findCustomerById(String customerId) throws CustomerNotFoundException, RecordNotFoundException;
 
 	public List<Customer> findCustomersByName (String name);
 
 	public List<Customer> getAllCustomers();
 
 
-	public Customer getFullCustomerDetail(String customerId) throws CustomerNotFoundException;
+	public Customer getFullCustomerDetail(String customerId) throws CustomerNotFoundException, RecordNotFoundException;
 
 	
 	public void recordCall(String customerId, Call callDetails) throws CustomerNotFoundException;
 
-	Customer getCustomerById(int id) throws CustomerNotFoundException;
+	Customer getCustomerById(int id) throws CustomerNotFoundException, RecordNotFoundException;
 }
