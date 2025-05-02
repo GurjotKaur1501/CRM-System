@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.ArrayList;
+
+import se.yrgo.dataaccess.RecordNotFoundException;
 import se.yrgo.domain.Call;
 import se.yrgo.domain.Customer;
 import se.yrgo.domain.Action;
@@ -62,5 +64,10 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 			customerCalls.add(callDetails);
 		}
 	}
+
+	@Override
+	public Customer getCustomerById(int id) throws CustomerNotFoundException, RecordNotFoundException {
+		return null;
 	}
+}
 	

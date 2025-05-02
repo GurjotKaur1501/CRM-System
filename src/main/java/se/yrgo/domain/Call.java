@@ -1,6 +1,5 @@
 package se.yrgo.domain;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -21,7 +20,7 @@ public class Call {
 
 	private String notes;
 
-	public Call(String notes, LocalDateTime now){
+	public Call(String notes){
 		// this defaults to a timestamp of "now"
 		this (notes, new java.util.Date());
 	}
