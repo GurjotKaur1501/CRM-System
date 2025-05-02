@@ -39,6 +39,9 @@ public class Customer {
 		this.calls = new ArrayList<Call>();
 	}
 
+	public Customer(int id, String companyName, String email) {
+	}
+
 	public void addCall(Call callDetails) {
 		this.calls.add(callDetails);
 	}
@@ -102,4 +105,8 @@ public class Customer {
 	public void put(String companyName, Customer customer) {
 
 	}
+
+    public Object getId() {
+        return null;
+    }
 }

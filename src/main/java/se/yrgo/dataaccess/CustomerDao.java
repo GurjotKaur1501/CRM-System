@@ -25,9 +25,9 @@ public interface CustomerDao {
 
 	public void addCall (Call newCall, String customerId) throws RecordNotFoundException;
 
-    Customer getCustomerById(int id);
+    Customer getCustomerById(int id) throws RecordNotFoundException;
 
-	Customer findCustomerById(String customerId);
+	Customer findCustomerById(String customerId) throws RecordNotFoundException;
 
 	List<Customer> findCustomersByName(String name);
 

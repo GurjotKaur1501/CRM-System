@@ -32,6 +32,9 @@ public class Call {
 		this.notes = notes;
 	}
 
+    public Call(int id, String notes) {
+    }
+
 	public String toString()	{
 		return this.timeAndDate + " : " + this.notes;
 	}
